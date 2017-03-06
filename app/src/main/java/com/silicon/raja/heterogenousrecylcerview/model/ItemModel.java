@@ -9,6 +9,11 @@ public class ItemModel {
   private String url;
   private String description;
 
+  public ItemModel(String name, String url) {
+    this.name = name;
+    this.url = url;
+  }
+
   public String getName() {
     return name;
   }
