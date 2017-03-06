@@ -1,18 +1,20 @@
-package com.silicon.raja.heterogenousrecylcerview;
+package com.silicon.raja.heterogenousrecylcerview.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.silicon.raja.heterogenousrecylcerview.R;
+import com.silicon.raja.heterogenousrecylcerview.model.ItemModel;
 import java.util.List;
 
 public class HeterogeneousAdapter extends RecyclerView.Adapter<HeterogeneousAdapter.ViewHolder> {
 
-  private List<MyItem> myItems;
+  private List<ItemModel> itemModels;
   private ItemListener myListener;
 
-  public HeterogeneousAdapter(List<MyItem> items, ItemListener listener) {
-    myItems = items;
+  public HeterogeneousAdapter(List<ItemModel> items, ItemListener listener) {
+    itemModels = items;
     myListener = listener;
   }
 
@@ -26,31 +28,29 @@ public class HeterogeneousAdapter extends RecyclerView.Adapter<HeterogeneousAdap
   }
 
   @Override public int getItemCount() {
-    return myItems.size();
+    return itemModels.size();
   }
 
   @Override public void onBindViewHolder(ViewHolder holder, int position) {
-    holder.setData(myItems.get(position));
+    holder.setData(itemModels.get(position));
   }
 
   public interface ItemListener {
-    void onItemClick(MyItem item);
+    void onItemClick(ItemModel item);
   }
 
   public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     // TODO - Your view members
-    public MyItem item;
+    public ItemModel item;
 
     public ViewHolder(View itemView) {
       super(itemView);
       itemView.setOnClickListener(this);
-      // TODO instantiate/assign view members
     }
 
-    public void setData(MyItem item) {
+    public void setData(ItemModel item) {
       this.item = item;
-      // TODO set data to view
     }
 
     @Override public void onClick(View v) {
