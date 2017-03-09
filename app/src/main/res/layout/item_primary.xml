@@ -37,7 +37,6 @@
         android:layout_centerVertical="true"
         android:text="more"
         android:textColor="#FFF"
-        android:theme="@style/MyButton"
         />
 
 

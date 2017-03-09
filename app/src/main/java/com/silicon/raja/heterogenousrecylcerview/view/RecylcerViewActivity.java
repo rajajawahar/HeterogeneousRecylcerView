@@ -16,8 +16,7 @@ import com.silicon.raja.heterogenousrecylcerview.model.SectionModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecylcerViewActivity extends AppCompatActivity
-    implements HeterogeneousPrimaryAdapter.ItemListener {
+public class RecylcerViewActivity extends AppCompatActivity {
 
   List<SectionModel> itemList = new ArrayList<>();
   RecyclerView my_recycler_view;
@@ -71,9 +70,5 @@ public class RecylcerViewActivity extends AppCompatActivity
       dm.setAllItemsInSection(singleItem);
       itemList.add(dm);
     }
-  }
-
-  @Override public void onItemClick(ItemModel item) {
-
   }
 }
